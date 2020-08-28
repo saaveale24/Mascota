@@ -10,6 +10,9 @@ public class Data {
             add(new Mascota(R.drawable.ic_perro_2, "Doug", 0, false));
             add(new Mascota(R.drawable.ic_perro_3, "Perrencio", 1, false));
             add(new Mascota(R.drawable.ic_perro_4, "Tajash", 0, false));
+            add(new Mascota(R.drawable.ic_parrot, "Tito", 0, false));
+            add(new Mascota(R.drawable.ic_gato_2, "Muñungo", 0, false));
+            add(new Mascota(R.drawable.ic_turtle, "Clementina", 0, false));
         }
     };
     public static int getItemFavorite(){

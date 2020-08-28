@@ -46,18 +46,19 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
                 ContextCompat.getDrawable(activity, R.drawable.ic_unbone));
         contactoViewHolder.btnLike.setImageDrawable(dw);
 
-        contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mascota.favorite();
-                contactoViewHolder.tvRating.setText(String.valueOf(mascota.getRating()));
-                Drawable dw= (mascota.getFavorite()?ContextCompat.getDrawable(activity, R.drawable.ic_favbone):
-                        ContextCompat.getDrawable(activity, R.drawable.ic_unbone));
-                contactoViewHolder.btnLike.setImageDrawable(dw);
-                Snackbar.make(view,"Agregaste a "+mascota.getNombre()+" a tus favoritos",Snackbar.LENGTH_SHORT).show();
+        if(activity.getClass()==MainActivity.class) {
+            contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mascota.favorite();
+                    contactoViewHolder.tvRating.setText(String.valueOf(mascota.getRating()));
+                    Drawable dw = (mascota.getFavorite() ? ContextCompat.getDrawable(activity, R.drawable.ic_favbone) :
+                            ContextCompat.getDrawable(activity, R.drawable.ic_unbone));
+                    contactoViewHolder.btnLike.setImageDrawable(dw);
 
-            }
-        });
+                }
+            });
+        }
     }
 
     @Override
