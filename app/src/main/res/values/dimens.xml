@@ -5,4 +5,10 @@
     <dimen name="corner_radius_cardview">4dp</dimen>
     <dimen name="padding_cardview">10dp</dimen>
     <dimen name="title_size">20sp</dimen>
+    <dimen name="padding_form">15dp</dimen>
+    <dimen name="padding_enviarComentario">25dp</dimen>
+    <dimen name="width_grid_cardview">120dp</dimen>
+    <dimen name="height_foto">120dp</dimen>
+    <dimen name="width_trating_foto">40dp</dimen>
+    <dimen name="width_irating_foto">70dp</dimen>
 </resources>

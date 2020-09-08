@@ -1,9 +1,7 @@
-package com.saaveale.mascota;
+package com.saaveale.mascota.adapter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.saaveale.mascota.MainActivity;
+import com.saaveale.mascota.pojo.Mascota;
+import com.saaveale.mascota.R;
 
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
                 ContextCompat.getDrawable(activity, R.drawable.ic_unbone));
         contactoViewHolder.btnLike.setImageDrawable(dw);
 
-        if(activity.getClass()==MainActivity.class) {
+        if(activity.getClass()== MainActivity.class) {
             contactoViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -3,6 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/mFavorito"
+        android:title="@string/mFavorito"
         android:icon="@drawable/ic_star5"
         app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/mContacto"
+        android:title="@string/mContacto"/>
+
+    <item
+        android:id="@+id/mAcercaDe"
+        android:title="@string/mAcercaDe"/>
 </menu>

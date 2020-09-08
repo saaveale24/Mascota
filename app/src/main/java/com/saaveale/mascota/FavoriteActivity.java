@@ -7,7 +7,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.saaveale.mascota.adapter.MascotaAdaptador;
+import com.saaveale.mascota.pojo.Mascota;
 
 import java.util.ArrayList;
 

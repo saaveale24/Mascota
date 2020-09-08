@@ -1,4 +1,4 @@
-package com.saaveale.mascota;
+package com.saaveale.mascota.pojo;
 
 import java.io.Serializable;
 

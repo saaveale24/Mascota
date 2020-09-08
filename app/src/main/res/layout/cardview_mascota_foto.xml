@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvContacto"
+    android:layout_width="@dimen/width_grid_cardview"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_vertical_margin"
+    card_view:cardCornerRadius="@dimen/corner_radius_cardview">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgFotoFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_foto"
+            android:src="@drawable/ic_perro_1"
+            android:padding="@dimen/padding_cardview"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:background="@color/colorWhite">
+
+            <TextView
+                android:id="@+id/tvRatingFoto"
+                android:layout_width="@dimen/width_trating_foto"
+                android:layout_height="match_parent"
+                android:text="@string/prating"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="@dimen/title_size"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/imgRatingFoto"
+                android:layout_width="@dimen/width_irating_foto"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bone"
+                android:padding="@dimen/padding_cardview"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

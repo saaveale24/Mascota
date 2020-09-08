@@ -3,4 +3,19 @@
     <string name="pnombre">Catty</string>
     <string name="prating">3</string>
     <string name="mascotas">MASCOTAS</string>
+    <string name="mFavorito">5 Favoritos</string>
+    <string name="mContacto">Contacto</string>
+    <string name="mAcercaDe">Acerca de</string>
+    <string name="fNombre">Nombre</string>
+    <string name="fCorreo">Correo</string>
+    <string name="fMensaje">Mensaje</string>
+    <string name="enviarComentario">Enviar comentario</string>
+
+    <string name="bNombre">Alex Drysdale</string>
+    <string name="bTitulo">Junior Web Developer</string>
+    <string name="bDetalle">
+        My name is Alex Drysdale and I am a Junior Web Developer for Oswald Technologies. I am an
+        accomplished coder and programmer, and I enjoy using my skills to contribute to the exciting technological
+        advances that happen every day at Oswald Tech.
+    </string>
 </resources>

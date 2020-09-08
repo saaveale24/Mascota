@@ -1,8 +1,13 @@
 package com.saaveale.mascota;
 
+import com.saaveale.mascota.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class Data {
+    private static final int MAX_NUMBER=99;
+    private static final int MIN_NUMBER=1;
+
     public static ArrayList<Mascota> mascotas= new ArrayList<Mascota>(){
         {
             add(new Mascota(R.drawable.ic_perro_1, "Wouff", 5, false));
@@ -15,6 +20,19 @@ public class Data {
             add(new Mascota(R.drawable.ic_turtle, "Clementina", 0, false));
         }
     };
+    public static ArrayList<Mascota> mascotafotos= new ArrayList<Mascota>(){
+        {
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+            add(new Mascota(R.drawable.ic_perro_1, "", getRandomNumber(), false));
+        }
+    };
     public static int getItemFavorite(){
         int cnt=0;
         for (Mascota m:mascotas) {
@@ -24,4 +42,8 @@ public class Data {
         }
         return cnt;
     }
+    private static int getRandomNumber(){
+        return (int) (Math.random() * (MAX_NUMBER - MIN_NUMBER + 1) + MIN_NUMBER);
+    }
+
 }
