@@ -1,5 +1,6 @@
 package com.saaveale.mascota;
 
+import com.saaveale.mascota.db.ConstructorMascota;
 import com.saaveale.mascota.pojo.Mascota;
 
 import java.util.ArrayList;

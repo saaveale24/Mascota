@@ -9,12 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.saaveale.mascota.adapter.MascotaAdaptador;
 import com.saaveale.mascota.pojo.Mascota;
+import com.saaveale.mascota.presentador.FavoriteActivityPresenter;
+import com.saaveale.mascota.presentador.IFavoriteActivityPresenter;
 
 import java.util.ArrayList;
 
-public class FavoriteActivity extends AppCompatActivity {
+public class FavoriteActivity extends AppCompatActivity implements IFavoriteActivityView {
     private RecyclerView listaMascotaFavorita;
-    private ArrayList<Mascota> mascotasFavorita;
+    private IFavoriteActivityPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,24 +28,26 @@ public class FavoriteActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mascotasFavorita= new ArrayList<Mascota>();
-
-        for (Mascota m:Data.mascotas) {
-            if(m.getFavorite()) {
-                mascotasFavorita.add(m);
-            }
-        }
-
-
         listaMascotaFavorita=(RecyclerView)findViewById(R.id.rvMascotaFavorita);
+        presenter= new FavoriteActivityPresenter(this,this.getBaseContext());
+
+    }
+
+    @Override
+    public void generarLinearLayoutVertical() {
         LinearLayoutManager llm=new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-
         listaMascotaFavorita.setLayoutManager(llm);
-        inicializarAdaptador();
     }
-    public void inicializarAdaptador(){
-        MascotaAdaptador adaptador= new MascotaAdaptador(mascotasFavorita,this);
+
+    @Override
+    public MascotaAdaptador crearAdaptador(ArrayList<Mascota> contactos) {
+        MascotaAdaptador adaptador= new MascotaAdaptador(contactos,this);
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
         listaMascotaFavorita.setAdapter(adaptador);
     }
 }

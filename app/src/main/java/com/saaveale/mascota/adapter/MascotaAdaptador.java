@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.saaveale.mascota.MainActivity;
+import com.saaveale.mascota.db.ConstructorMascota;
 import com.saaveale.mascota.pojo.Mascota;
 import com.saaveale.mascota.R;
 
@@ -42,6 +43,9 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         contactoViewHolder.tvNombre.setText(mascota.getNombre());
         contactoViewHolder.tvRating.setText(String.valueOf(mascota.getRating()));
 
+        ConstructorMascota constructorContacto= new ConstructorMascota(activity);
+        mascota.setFavorite(constructorContacto.obtenerFavoritoMascota(mascota)==1?true:false);
+
         Drawable dw= (mascota.getFavorite()?ContextCompat.getDrawable(activity, R.drawable.ic_favbone):
                 ContextCompat.getDrawable(activity, R.drawable.ic_unbone));
         contactoViewHolder.btnLike.setImageDrawable(dw);
@@ -51,6 +55,13 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
                 @Override
                 public void onClick(View view) {
                     mascota.favorite();
+
+                    ConstructorMascota constructorContacto= new ConstructorMascota(activity);
+                    if(mascota.getFavorite()){
+                        constructorContacto.insertarMascotaFavorita(mascota);
+                    }else{
+                        constructorContacto.eliminarMascotaFavorita(mascota);
+                    }
                     contactoViewHolder.tvRating.setText(String.valueOf(mascota.getRating()));
                     Drawable dw = (mascota.getFavorite() ? ContextCompat.getDrawable(activity, R.drawable.ic_favbone) :
                             ContextCompat.getDrawable(activity, R.drawable.ic_unbone));

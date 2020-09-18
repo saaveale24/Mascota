@@ -3,6 +3,7 @@ package com.saaveale.mascota.pojo;
 import java.io.Serializable;
 
 public class Mascota implements Serializable {
+    private int id;
     private String nombre;
     private int imagen;
     private int rating;
@@ -13,6 +14,10 @@ public class Mascota implements Serializable {
         this.imagen = imagen;
         this.rating = rating;
         this.favorite=favorite;
+    }
+
+    public Mascota() {
+
     }
 
     public String getNombre() {
@@ -54,5 +59,13 @@ public class Mascota implements Serializable {
         }else{
             this.rating--;
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

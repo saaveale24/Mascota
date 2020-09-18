@@ -68,14 +68,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
             case R.id.mFavorito:
-                if(Data.getItemFavorite()==0) {
+                /*if(Data.getItemFavorite()==0) {
                     Snackbar.make(findViewById(android.R.id.content),"Se agregaron los 5 primeras mascotas tus favoritos automáticamente",Snackbar.LENGTH_SHORT).show();
                     Data.mascotas.get(0).setFavorite(true);
                     Data.mascotas.get(1).setFavorite(true);
                     Data.mascotas.get(2).setFavorite(true);
                     Data.mascotas.get(3).setFavorite(true);
                     Data.mascotas.get(4).setFavorite(true);
-                }
+                }*/
                 Intent intent= new Intent(MainActivity.this,FavoriteActivity.class);
                 startActivity(intent);
                 break;
